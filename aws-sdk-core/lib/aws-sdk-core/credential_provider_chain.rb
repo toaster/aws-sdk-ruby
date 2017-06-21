@@ -62,8 +62,7 @@ module Aws
       if options[:config]
         SharedCredentials.new(profile_name: options[:config].profile)
       else
-        SharedCredentials.new(
-          profile_name: ENV['AWS_PROFILE'].nil? ? 'default' : ENV['AWS_PROFILE'])
+        SharedCredentials.new
       end
     rescue Errors::NoSuchProfileError
       nil
